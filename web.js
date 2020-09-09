@@ -4,10 +4,10 @@ var app = express();
 app.use(express.logger());
 
 var db_config = {
-    host: 'remotemysql.com',
-    user: '4pDgcFhLfr',
-    password: '15FdGZppny',
-    database: '4pDgcFhLfr'
+    host: 'ghostcontrols.myfishbowl.com',
+    user: 'gone',
+    password: 'fishing',
+    database: 'gc_live_2020'
 };
 
 var connection;
@@ -37,7 +37,7 @@ function handleDisconnect() {
 handleDisconnect();
 
 app.get('/', function(request, response) {
-    connection.query('SELECT * from tutorials_tbl', function(err, rows, fields) {
+    connection.query('SELECT * from ordertype', function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
