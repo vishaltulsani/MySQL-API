@@ -4,10 +4,10 @@ var app = express();
 app.use(express.logger());
 
 var db_config = {
-    host: 'ghostcontrols.myfishbowl.com',
-    user: 'gone',
-    password: 'fishing',
-    database: 'gc_live_2020'
+    host: 'remotemysql.com',
+    user: '4pDgcFhLfr',
+    password: '15FdGZppny',
+    database: '4pDgcFhLfr'
 };
 
 var connection;
