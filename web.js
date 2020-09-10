@@ -36,7 +36,7 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-app.get('/', async(request, response) {
+app.get('/', function(request, response) {
     connection.query('SELECT * from tutorials_tbl', function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
