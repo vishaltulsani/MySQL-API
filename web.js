@@ -37,7 +37,11 @@ function handleDisconnect() {
 handleDisconnect();
 
 app.get('/', function(request, response) {
-    connection.query('SELECT * from tutorials_tbl', function(err, rows, fields) {
+    var auth_token = request.param('auth_token');
+    var table_name = request.param('table_name');
+   
+    if(auth-token === 'd821906933427295856ef9ed170e385c'){
+    connection.query('SELECT * from ' + table_name, function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
@@ -46,6 +50,12 @@ app.get('/', function(request, response) {
 		       "data" : rows
 		       });
     });
+    }
+	else{
+		response.json({"success" : 0,
+		       "Message" : "Please enter the correct API Auth-token in parameters."
+		       });
+	}
 });
 
 app.get('/data', function(request, response) {
