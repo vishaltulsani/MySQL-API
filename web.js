@@ -48,6 +48,15 @@ app.get('/', function(request, response) {
     });
 });
 
+app.get('/data', function(request, response) {
+    let Auth_Key = req.query.Auth_Key;
+    let Table_Name = req.query.Table_Name;
+    response.json({"success" : 1,
+		       "Auth_Key" : Auth_Key,
+		       "Table_Name": Table_Name
+		       });
+});
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port);
