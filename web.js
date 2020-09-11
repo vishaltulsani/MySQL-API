@@ -49,11 +49,11 @@ app.get('/', function(request, response) {
 });
 
 app.get('/data', function(request, response) {
-    let Auth_Key = req.query.Auth_Key;
-    let Table_Name = req.query.Table_Name;
+    var auth = req.param('auth');
+    var table = req.param('table');
     response.json({"success" : 1,
-		       "Auth_Key" : Auth_Key,
-		       "Table_Name": Table_Name
+		       "Auth_Key" : auth,
+		       "Table_Name": table
 		       });
 });
 
