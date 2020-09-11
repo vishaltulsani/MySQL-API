@@ -58,15 +58,6 @@ app.get('/', function(request, response) {
 	}
 });
 
-app.get('/data', function(request, response) {
-    var auth = request.param('auth');
-    var table = request.param('table');
-    response.json({"success" : 1,
-		       "Auth_Key" : auth,
-		       "Table_Name": table
-		       });
-});
-
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Listening on " + port);
