@@ -49,8 +49,8 @@ app.get('/', function(request, response) {
 });
 
 app.get('/data', function(request, response) {
-    var auth = req.param('auth');
-    var table = req.param('table');
+    var auth = request.param('auth');
+    var table = request.param('table');
     response.json({"success" : 1,
 		       "Auth_Key" : auth,
 		       "Table_Name": table
