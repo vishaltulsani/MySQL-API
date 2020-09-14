@@ -40,7 +40,7 @@ app.get('/', function(request, response) {
     var auth_token = request.param('auth_token');
     var table_name = request.param('table_name');
     var error;
-   
+    console.log('table name--->'+table_name);
     if(auth_token === 'd821906933427295856ef9ed170e385c'){
     connection.query('SELECT * from ' + table_name, function(err, rows, fields) {
         if (err) {
@@ -49,8 +49,7 @@ app.get('/', function(request, response) {
             throw err;
         }
         response.json({"success" : 1,
-		       "data" : table_name,
-		       "message" : error
+		       "data" : table_name
 		       });
     });
     }
