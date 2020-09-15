@@ -43,7 +43,7 @@ app.get('/', function(request, response) {
     connection.query('SELECT * from ' + table_name, function(err, rows, fields) {
         if (err) {
 	    response.json({"success" : 0,
-		       "Message" : err
+		       "Message" : err.message
 		       });
             throw err;
         }
